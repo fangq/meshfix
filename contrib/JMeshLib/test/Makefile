@@ -1,8 +1,8 @@
 CFLAGS = -Wall -I../include
-LIBS = -L../lib -ljmesh
+LIBS = -L../ -ljmesh
 
 test: test.o
-	g++ -o meshfix test.o $(LIBS)
+	g++ -o jmeshlib test.o $(LIBS)
 
 
 #-------------------------------------------------------------------------
@@ -15,4 +15,4 @@ test.o:			test.cpp
 #-------------------------------------------------------------------------
 
 clean :
-	$(RM) -f *.o meshfix
+	$(RM) -f *.o jmeshlib
