@@ -4,6 +4,7 @@ add_subdirectory(contrib/JMeshLib)
 include_directories(
     include
     /usr/include/superlu
+    /usr/include/SuperLU
     contrib/JMeshLib/include
     contrib/OpenNL3.2.1/src
     contrib/jrs_predicates

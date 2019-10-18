@@ -3436,8 +3436,8 @@ void nlPreconditioner_SSOR(NLdouble* x, NLdouble* y) {
 #ifdef NL_USE_SUPERLU
 
 /* SuperLU includes */
-#include <SuperLU/slu_cdefs.h>
-#include <SuperLU/supermatrix.h>
+#include <slu_cdefs.h>
+#include <supermatrix.h>
 
 /* Note: SuperLU is difficult to call, but it is worth it.    */
 /* Here is a driver inspired by A. Sheffer's "cow flattener". */
