@@ -9,10 +9,6 @@ include_directories(
     contrib/OpenNL3.2.1/src
     contrib/jrs_predicates
 )
-link_directories(
-    ${LINK_DIRECTORIES}
-    ${CMAKE_CURRENT_SOURCE_DIR}/contrib/JMeshLib/lib
-)
 file(GLOB meshfix_h include/*.h)
 set(meshfix_src
     contrib/jrs_predicates/jrs_predicates.c
