@@ -588,8 +588,8 @@ Edge *Vertex::inverseCollapse(Vertex *v2, Edge *e, Edge *e1, Edge *e2, Edge *e3,
 //// Returns the number of boundaries of the spherical neighborhood ////
 //// of radius 'r'.  						    ////
 
-#define INCREASE_INFO_FIELD(v) ((v)->info = (void *)(((j_voidint)(v)->info)+1))
-#define DECREASE_INFO_FIELD(v) ((v)->info = (void *)(((j_voidint)(v)->info)-2))
+#define INCREASE_INFO_FIELD(v) ((v)->info = (void *)(((j_voidint)(size_t)(v)->info)+1))
+#define DECREASE_INFO_FIELD(v) ((v)->info = (void *)(((j_voidint)(size_t)(v)->info)-2))
 
 int Vertex::getTopology(const double& r) const
 {

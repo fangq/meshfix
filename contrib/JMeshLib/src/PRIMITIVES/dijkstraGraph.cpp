@@ -30,8 +30,8 @@
 
 int dijkstraHeap::compare(const void *n1, const void *n2)
 {
- dijkstraNode *a = nodes[(j_voidint)n1];
- dijkstraNode *b = nodes[(j_voidint)n2];
+ dijkstraNode *a = nodes[(j_voidint)(size_t)n1];
+ dijkstraNode *b = nodes[(j_voidint)(size_t)n2];
  double l1 = a->dist;
  double l2 = b->dist;
 

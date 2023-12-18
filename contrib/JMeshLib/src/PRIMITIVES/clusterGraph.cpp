@@ -30,8 +30,8 @@
 
 int clusterHeap::compare(const void *e1, const void *e2)
 {
- clusterEdge *a = edges[(j_voidint)e1];
- clusterEdge *b = edges[(j_voidint)e2];
+ clusterEdge *a = edges[(j_voidint)(size_t)e1];
+ clusterEdge *b = edges[(j_voidint)(size_t)e2];
  double l1 = a->cost;
  double l2 = b->cost;
 
