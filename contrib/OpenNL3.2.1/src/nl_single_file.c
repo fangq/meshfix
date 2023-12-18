@@ -1480,6 +1480,8 @@ typedef NLdouble  doublereal ;
 typedef NLboolean logical ;
 typedef NLint     ftnlen ;
 
+int NL_FORTRAN_WRAP(lsame)(char *ca, char *cb);
+int NL_FORTRAN_WRAP(xerbla)(char *srname, int *info);
 
 #ifndef max
 #define max(x,y) ((x) > (y) ? (x) : (y))
@@ -3437,6 +3439,16 @@ void nlPreconditioner_SSOR(NLdouble* x, NLdouble* y) {
 
 /* SuperLU includes */
 #include <slu_cdefs.h>
+
+/* Hide the dgemv, gemv_ prototypes because the local definition is
+   different (the n, m arguments are integers, not pointers to
+   integers here). */
+#define dgemv dgemv_hidden
+#define dgemv_ dgemv__hidden
+#include <slu_ddefs.h>
+#undef dgemv
+#undef dgemv_
+
 #include <supermatrix.h>
 
 /* Note: SuperLU is difficult to call, but it is worth it.    */
