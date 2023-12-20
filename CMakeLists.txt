@@ -1,10 +1,11 @@
 cmake_minimum_required (VERSION 2.6)
 project (MeshFix)
 add_subdirectory(contrib/JMeshLib)
+link_directories(/usr/local/lib/)
 include_directories(
     include
     /usr/include/superlu
-    /usr/include/SuperLU
+    /usr/local/include/
     contrib/JMeshLib/include
     contrib/OpenNL3.2.1/src
     contrib/jrs_predicates
