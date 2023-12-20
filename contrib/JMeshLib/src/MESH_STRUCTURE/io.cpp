@@ -682,7 +682,7 @@ int Triangulation::saveVRML1(const char *fname, const int mode)
    fprintf(fp,"Material {\n diffuseColor [\n");
    FOREACHTRIANGLE(t, n)
    {
-    pkc = (unsigned int)((j_voidint)t->info);
+    pkc = (unsigned int)((j_voidint)(size_t)t->info);
     fprintf(fp,"  %f %f %f,\n",((pkc>>24)&0x000000ff)/255.0,((pkc>>16)&0x000000ff)/255.0,((pkc>>8)&0x000000ff)/255.0);
    }
    fprintf(fp," ]\n}\nMaterialBinding {\n value PER_FACE_INDEXED\n}\n");
@@ -691,7 +691,7 @@ int Triangulation::saveVRML1(const char *fname, const int mode)
    fprintf(fp,"Material {\n diffuseColor [\n");
    FOREACHVERTEX(v, n)
    {
-    pkc = (unsigned int)((j_voidint)v->info);
+    pkc = (unsigned int)((j_voidint)(size_t)v->info);
     fprintf(fp,"  %f %f %f,\n",((pkc>>24)&0x000000ff)/255.0,((pkc>>16)&0x000000ff)/255.0,((pkc>>8)&0x000000ff)/255.0);
    }
    fprintf(fp," ]\n}\nMaterialBinding {\n value PER_VERTEX_INDEXED\n}\n");

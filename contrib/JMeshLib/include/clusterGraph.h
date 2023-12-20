@@ -54,8 +54,8 @@ class clusterHeap : abstractHeap
  ~clusterHeap() {delete(positions);}
 
  void push(clusterEdge *e) {insert((void *)(e->index));}
- clusterEdge *getFirst() {return (numels)?(edges[(j_voidint)getHead()]):(NULL);}
- clusterEdge *popHead() {return (numels)?(edges[(j_voidint)removeHead()]):(NULL);}
+ clusterEdge *getFirst() {return (numels)?(edges[(j_voidint)(size_t)getHead()]):(NULL);}
+ clusterEdge *popHead() {return (numels)?(edges[(j_voidint)(size_t)removeHead()]):(NULL);}
  int isEmpty() {return (numels==0);}
 
  void remove(clusterEdge *e)

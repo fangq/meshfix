@@ -65,7 +65,7 @@ class dijkstraHeap : abstractHeap
 
  void push(dijkstraNode *n) {insert((void *)(n->index));}
  dijkstraNode *getHead() {return (dijkstraNode *)getHead();}
- dijkstraNode *popHead() {return (numels)?(nodes[(j_voidint)removeHead()]):(NULL);}
+ dijkstraNode *popHead() {return (numels)?(nodes[(j_voidint)(size_t)removeHead()]):(NULL);}
  int isEmpty() {return (numels==0);}
 
  void remove(dijkstraNode *n)
