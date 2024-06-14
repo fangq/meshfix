@@ -84,11 +84,7 @@ typedef unsigned short UINT16;
 typedef   signed short	INT16;
 #endif
 
-#ifdef IS64BITPLATFORM
-typedef long int j_voidint;
-#else
-typedef int	 j_voidint;
-#endif 
+typedef size_t		j_voidint;
 
 #define UBYTE_MAX	255
 #define UINT16_MAX	65535
