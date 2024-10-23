@@ -95,6 +95,8 @@ typedef NLdouble  doublereal ;
 typedef NLboolean logical ;
 typedef NLint     ftnlen ;
 
+int NL_FORTRAN_WRAP(lsame)(char *ca, char *cb);
+int NL_FORTRAN_WRAP(xerbla)(char *srname, int *info);
 
 #ifndef max
 #define max(x,y) ((x) > (y) ? (x) : (y))

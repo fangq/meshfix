@@ -52,6 +52,16 @@
 
 /* SuperLU includes */
 #include <slu_cdefs.h>
+
+/* Hide the dgemv, gemv_ prototypes because the local definition is
+   different (the n, m arguments are integers, not pointers to
+   integers here). */
+#define dgemv dgemv_hidden
+#define dgemv_ dgemv__hidden
+#include <slu_ddefs.h>
+#undef dgemv
+#undef dgemv_
+
 #include <supermatrix.h>
 
 /* Note: SuperLU is difficult to call, but it is worth it.    */
