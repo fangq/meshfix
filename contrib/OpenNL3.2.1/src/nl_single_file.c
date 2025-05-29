@@ -420,6 +420,11 @@ NLboolean nlDefaultSolver() ;
 #define NL_FORTRAN_WRAP(x) x##_
 #endif
 
+#if SUPERLU_MAJOR_VERSION > 6
+typedef void BLAS_RETURN_TYPE ;
+#else
+typedef int BLAS_RETURN_TYPE ;
+#endif
 
 /***********************************************************************************/
 /* C wrappers for BLAS routines */
@@ -1606,7 +1611,7 @@ int NL_FORTRAN_WRAP(lsame)(char *ca, char *cb)
 } /* xerbla_ */
 
 
-/* Subroutine */ int NL_FORTRAN_WRAP(daxpy)(integer *n, doublereal *da, doublereal *dx, 
+/* Subroutine */ BLAS_RETURN_TYPE NL_FORTRAN_WRAP(daxpy)(integer *n, doublereal *da, doublereal *dx, 
 	integer *incx, doublereal *dy, integer *incy)
 {
 
@@ -1942,7 +1947,7 @@ doublereal NL_FORTRAN_WRAP(dnrm2)(integer *n, doublereal *x, integer *incx)
 } /* dnrm2_ */
 #undef X
 
-/* Subroutine */ int NL_FORTRAN_WRAP(dcopy)(integer *n, doublereal *dx, integer *incx, 
+/* Subroutine */ BLAS_RETURN_TYPE NL_FORTRAN_WRAP(dcopy)(integer *n, doublereal *dx, integer *incx, 
 	doublereal *dy, integer *incy)
 {
 
@@ -2030,7 +2035,7 @@ L40:
 #undef DX
 #undef DY
 
-/* Subroutine */ int NL_FORTRAN_WRAP(dgemv)(char *trans, integer *m, integer *n, doublereal *
+/* Subroutine */ BLAS_RETURN_TYPE NL_FORTRAN_WRAP(dgemv)(char *trans, integer *m, integer *n, doublereal *
 	alpha, doublereal *a, integer *lda, doublereal *x, integer *incx, 
 	doublereal *beta, doublereal *y, integer *incy)
 {
